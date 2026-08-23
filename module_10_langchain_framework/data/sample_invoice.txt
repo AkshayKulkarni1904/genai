@@ -1,0 +1,19 @@
+ACME INDUSTRIAL SUPPLIES INC.
+100 Enterprise Way, Suite 400, San Francisco, CA
+TAX ID: US-948271049
+
+INVOICE #: INV-2026-8842
+INVOICE DATE: 2026-08-15
+DUE DATE: 2026-09-15
+CUSTOMER ID: CUST-9012 (Globex Corporation)
+
+LINE ITEMS:
+1. Enterprise Cloud License (12 Months) - Qty: 5 - Unit Price: $1,200.00 - Amount: $6,000.00
+2. Dedicated Support Tier-1 (Annual) - Qty: 1 - Unit Price: $4,500.00 - Amount: $4,500.00
+3. Network Hardware Appliance 10Gbps - Qty: 2 - Unit Price: $2,100.00 - Amount: $4,200.00
+
+SUBTOTAL: $14,700.00
+SALES TAX (8.5%): $1,249.50
+TOTAL AMOUNT DUE: $15,949.50
+CURRENCY: USD
+PAYMENT TERMS: Net 30

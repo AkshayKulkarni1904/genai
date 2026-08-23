@@ -1,0 +1,9 @@
+# Cloud Platform Architecture & Security Whitepaper
+Page 1: Architecture Overview
+The cloud platform employs a multi-region active-active topology across AWS, Azure, and GCP. The ingress layer utilizes Cloudflare Enterprise with edge rate limiting and TLS 1.3 termination.
+
+Page 2: Security & Encryption
+Data at rest is protected with AES-256 GCM using AWS KMS customer-managed keys. Data in transit is strictly encrypted using TLS 1.3 with automated certificate rotation every 60 days via Let's Encrypt / Cert-Manager.
+
+Page 3: Disaster Recovery & SLA
+Recovery Point Objective (RPO) is guaranteed at < 15 seconds. Recovery Time Objective (RTO) is < 2 minutes under automated failover. The platform provides a 99.99% uptime Service Level Agreement (SLA).

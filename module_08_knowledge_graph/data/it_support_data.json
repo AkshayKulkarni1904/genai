@@ -1,0 +1,219 @@
+{
+  "nodes": [
+    {
+      "id": "usr_alice",
+      "label": "User",
+      "properties": {
+        "name": "Alice Smith",
+        "email": "alice@acme.com",
+        "role": "Finance Director",
+        "canonical_id": "USER::ACME::alice"
+      }
+    },
+    {
+      "id": "usr_bob",
+      "label": "User",
+      "properties": {
+        "name": "Bob Jones",
+        "email": "bob@acme.com",
+        "role": "Lead Accountant",
+        "canonical_id": "USER::ACME::bob"
+      }
+    },
+    {
+      "id": "dev_laptop_101",
+      "label": "Device",
+      "properties": {
+        "serial_number": "MBP-2024-098",
+        "os": "macOS Sonoma",
+        "ip": "10.0.4.12",
+        "type": "Laptop"
+      }
+    },
+    {
+      "id": "dev_server_db1",
+      "label": "Device",
+      "properties": {
+        "hostname": "db-prod-01.internal",
+        "os": "Ubuntu 22.04",
+        "ip": "10.0.1.50",
+        "type": "Database Server"
+      }
+    },
+    {
+      "id": "app_erp",
+      "label": "Application",
+      "properties": {
+        "name": "SAP ERP Finance",
+        "version": "v9.2",
+        "criticality": "Tier-1",
+        "service_owner": "ERP Ops"
+      }
+    },
+    {
+      "id": "app_pg_cluster",
+      "label": "Application",
+      "properties": {
+        "name": "PostgreSQL Prod Cluster",
+        "version": "v15.3",
+        "criticality": "Tier-1",
+        "port": 5432
+      }
+    },
+    {
+      "id": "inc_9001",
+      "label": "Incident",
+      "properties": {
+        "ticket_id": "INC-9001",
+        "title": "ERP Checkout & Ledger Failure",
+        "severity": "P1-Critical",
+        "status": "Investigating"
+      }
+    },
+    {
+      "id": "inc_9002",
+      "label": "Incident",
+      "properties": {
+        "ticket_id": "INC-9002",
+        "title": "VPN Gateway Latency",
+        "severity": "P3-Minor",
+        "status": "Resolved"
+      }
+    },
+    {
+      "id": "ke_409",
+      "label": "KnownError",
+      "properties": {
+        "error_code": "KE-PG-CONN-409",
+        "summary": "Max client connections exceeded on PostgreSQL 15 pooler",
+        "workaround": "Restart PgBouncer or scale connection limits"
+      }
+    },
+    {
+      "id": "team_db_ops",
+      "label": "Team",
+      "properties": {
+        "name": "Database Platform Team",
+        "lead": "Sarah Connor",
+        "slack_channel": "#db-ops-escalation"
+      }
+    },
+    {
+      "id": "team_finance_ops",
+      "label": "Team",
+      "properties": {
+        "name": "Financial IT Support",
+        "lead": "David Miller",
+        "slack_channel": "#fin-support"
+      }
+    },
+    {
+      "id": "res_880",
+      "label": "Resolution",
+      "properties": {
+        "res_code": "RES-880",
+        "action": "Scale PgBouncer pooler and kill idle connections",
+        "verified": true,
+        "applied_by": "Sarah Connor"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "source": "usr_alice",
+      "target": "dev_laptop_101",
+      "type": "OWNS_DEVICE",
+      "properties": {
+        "assigned_date": "2024-01-15"
+      }
+    },
+    {
+      "source": "usr_alice",
+      "target": "inc_9001",
+      "type": "REPORTED_INCIDENT",
+      "properties": {
+        "timestamp": "2026-08-23T08:30:00Z"
+      }
+    },
+    {
+      "source": "usr_bob",
+      "target": "app_erp",
+      "type": "USES_APPLICATION",
+      "properties": {
+        "frequency": "Daily"
+      }
+    },
+    {
+      "source": "dev_laptop_101",
+      "target": "app_erp",
+      "type": "ACCESSES_APP",
+      "properties": {
+        "protocol": "HTTPS"
+      }
+    },
+    {
+      "source": "app_erp",
+      "target": "dev_server_db1",
+      "type": "HOSTED_ON_OR_DEPENDS_ON",
+      "properties": {
+        "latency_ms": 1.2
+      }
+    },
+    {
+      "source": "app_erp",
+      "target": "app_pg_cluster",
+      "type": "DEPENDS_ON",
+      "properties": {
+        "criticality": "Strict"
+      }
+    },
+    {
+      "source": "inc_9001",
+      "target": "app_erp",
+      "type": "AFFECTS_APPLICATION",
+      "properties": {
+        "impact": "High"
+      }
+    },
+    {
+      "source": "inc_9001",
+      "target": "ke_409",
+      "type": "CAUSED_BY_KNOWN_ERROR",
+      "properties": {
+        "confidence": 0.95
+      }
+    },
+    {
+      "source": "inc_9001",
+      "target": "team_db_ops",
+      "type": "ASSIGNED_TO_TEAM",
+      "properties": {
+        "assigned_at": "2026-08-23T08:35:00Z"
+      }
+    },
+    {
+      "source": "team_db_ops",
+      "target": "app_pg_cluster",
+      "type": "MANAGES_SERVICE",
+      "properties": {
+        "on_call": true
+      }
+    },
+    {
+      "source": "ke_409",
+      "target": "res_880",
+      "type": "RESOLVED_BY",
+      "properties": {
+        "standard_sop": "SOP-DB-RECOVER-01"
+      }
+    },
+    {
+      "source": "res_880",
+      "target": "inc_9001",
+      "type": "RESOLVES_INCIDENT",
+      "properties": {
+        "resolution_time_mins": 25
+      }
+    }
+  ]
+}

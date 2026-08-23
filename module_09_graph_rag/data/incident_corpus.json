@@ -1,0 +1,28 @@
+[
+  {
+    "doc_id": "KB-NET-701",
+    "title": "VPC Peering MTU Packet Fragmentation and TCP Drops",
+    "content": "When jumbo frames (MTU 9000) traverse VPC Peering connections configured with standard MTU 1500, silent TCP packet fragmentation and connection timeouts occur. The payment service checkout API fails with HTTP 504. Workaround: clamp MSS to 1460 in iptables or configure MTU 1500 across all VPC network interfaces.",
+    "entities": [
+      "VPC Peering",
+      "Payment Service",
+      "TCP Drops",
+      "MTU 9000",
+      "HTTP 504"
+    ],
+    "community": "Network Infrastructure"
+  },
+  {
+    "doc_id": "KB-PAY-802",
+    "title": "Payment Gateway Circuit Breaker Tripping on Database Lock Escalation",
+    "content": "Payment Gateway microservice relies on the Transaction DB. When high-volume batch billing runs concurrently with checkout traffic, row-level locks escalate to table locks, causing connection starvation and triggering the Resilience4j circuit breaker. Resolution: Isolate batch billing to read replicas and tune connection timeout to 10s.",
+    "entities": [
+      "Payment Gateway",
+      "Transaction DB",
+      "Circuit Breaker",
+      "Table Locks",
+      "Batch Billing"
+    ],
+    "community": "Payment Core"
+  }
+]

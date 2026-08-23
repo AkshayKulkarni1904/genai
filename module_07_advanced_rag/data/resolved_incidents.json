@@ -1,0 +1,22 @@
+[
+  {
+    "incident_id": "INC-88912",
+    "summary": "Users unable to login via Okta SSO with token timeout",
+    "product": "CloudAuth",
+    "error_code": "ERR_TOKEN_EXPIRED",
+    "customer_tier": "Enterprise",
+    "root_cause": "Clock skew discrepancy between identity provider and auth gateway",
+    "resolution": "Increased clock skew tolerance to 360 seconds and refreshed SAML signing certificate metadata.",
+    "resolved_date": "2025-11-14"
+  },
+  {
+    "incident_id": "INC-88945",
+    "summary": "High latency and connection pool exhaustion during batch processing",
+    "product": "DataStore",
+    "error_code": "ERR_CONN_TIMEOUT",
+    "customer_tier": "Standard",
+    "root_cause": "Unclosed connections in legacy batch reporting queries",
+    "resolution": "Applied patch v4.1.2 enabling auto-reap of idle connections after 60 seconds.",
+    "resolved_date": "2025-12-02"
+  }
+]

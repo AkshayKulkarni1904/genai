@@ -1,0 +1,73 @@
+{
+  "nodes": [
+    {
+      "id": "svc_checkout",
+      "label": "Service",
+      "name": "Checkout API",
+      "community": "Payment Core",
+      "tier": "Critical"
+    },
+    {
+      "id": "svc_payment_gw",
+      "label": "Service",
+      "name": "Payment Gateway",
+      "community": "Payment Core",
+      "tier": "Critical"
+    },
+    {
+      "id": "db_transaction",
+      "label": "Database",
+      "name": "Transaction DB Cluster",
+      "community": "Data Tier",
+      "tier": "Critical"
+    },
+    {
+      "id": "net_vpc_peering",
+      "label": "Network",
+      "name": "VPC-East Peering Link",
+      "community": "Network Infrastructure",
+      "tier": "Infra"
+    },
+    {
+      "id": "fail_mtu_mismatch",
+      "label": "FailurePattern",
+      "name": "MTU Mismatch Black Hole",
+      "error_code": "ERR_VPC_MTU_DROP",
+      "community": "Network Infrastructure"
+    },
+    {
+      "id": "fail_lock_escalation",
+      "label": "FailurePattern",
+      "name": "Row-to-Table Lock Escalation",
+      "error_code": "ERR_DB_LOCK_TIMEOUT",
+      "community": "Data Tier"
+    }
+  ],
+  "edges": [
+    {
+      "source": "svc_checkout",
+      "target": "svc_payment_gw",
+      "type": "CALLS_RPC"
+    },
+    {
+      "source": "svc_payment_gw",
+      "target": "db_transaction",
+      "type": "QUERIES_DB"
+    },
+    {
+      "source": "svc_checkout",
+      "target": "net_vpc_peering",
+      "type": "ROUTES_THROUGH"
+    },
+    {
+      "source": "net_vpc_peering",
+      "target": "fail_mtu_mismatch",
+      "type": "SUSCEPTIBLE_TO"
+    },
+    {
+      "source": "db_transaction",
+      "target": "fail_lock_escalation",
+      "type": "SUSCEPTIBLE_TO"
+    }
+  ]
+}

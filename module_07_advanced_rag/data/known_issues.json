@@ -1,0 +1,20 @@
+[
+  {
+    "issue_id": "KI-4012",
+    "title": "SAML Token Validation Failure on Clock Drift",
+    "product": "CloudAuth",
+    "error_code": "ERR_TOKEN_EXPIRED",
+    "workaround": "Temporarily bypass token strict timestamp verification in tenant config or sync NTP servers.",
+    "permanent_fix_version": "v3.5.0",
+    "status": "Active Workaround Available"
+  },
+  {
+    "issue_id": "KI-5003",
+    "title": "Connection Pool Starvation under concurrent heavy writes",
+    "product": "DataStore",
+    "error_code": "ERR_CONN_TIMEOUT",
+    "workaround": "Scale read replicas and set pool max_connections to 150.",
+    "permanent_fix_version": "v4.2.0",
+    "status": "Fix Scheduled"
+  }
+]

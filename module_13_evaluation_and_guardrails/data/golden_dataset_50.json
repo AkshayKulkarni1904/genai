@@ -1,0 +1,652 @@
+[
+  {
+    "query_id": "BQ-001",
+    "category": "Authentication & IAM",
+    "product": "CloudAuth",
+    "query_text": "How do I configure SAML 2.0 clock skew tolerance in CloudAuth?",
+    "expected_answer": "Set clock skew tolerance >= 300 seconds under Security Settings.",
+    "golden_source_ids": [
+      "DOC-AUTH-101"
+    ],
+    "required_role": "Admin",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-002",
+    "category": "Authentication & IAM",
+    "product": "CloudAuth",
+    "query_text": "What error code is returned when an SSO bearer token expires?",
+    "expected_answer": "ERR_TOKEN_EXPIRED (Code 4012).",
+    "golden_source_ids": [
+      "DOC-AUTH-101"
+    ],
+    "required_role": "SupportTier1",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-003",
+    "category": "Authentication & IAM",
+    "product": "CloudAuth",
+    "query_text": "How do I configure Azure AD callback URL?",
+    "expected_answer": "Set callback URL to https://auth.enterprise.io/login/callback.",
+    "golden_source_ids": [
+      "DOC-AUTH-101"
+    ],
+    "required_role": "Admin",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-004",
+    "category": "Authentication & IAM",
+    "product": "CloudAuth",
+    "query_text": "What is the maximum token lifetime in CloudAuth?",
+    "expected_answer": "Maximum access token lifetime is 3600 seconds (1 hour).",
+    "golden_source_ids": [
+      "DOC-AUTH-102"
+    ],
+    "required_role": "Admin",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-005",
+    "category": "Authentication & IAM",
+    "product": "CloudAuth",
+    "query_text": "How to enable MFA enforcement across all enterprise tenants?",
+    "expected_answer": "Enable Global MFA Toggle in IAM Security Policies.",
+    "golden_source_ids": [
+      "DOC-AUTH-103"
+    ],
+    "required_role": "Admin",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-006",
+    "category": "Authentication & IAM",
+    "product": "CloudAuth",
+    "query_text": "What algorithm is used for signing OAuth JWT tokens?",
+    "expected_answer": "RS256 with 2048-bit RSA keys.",
+    "golden_source_ids": [
+      "DOC-AUTH-104"
+    ],
+    "required_role": "Engineering",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-007",
+    "category": "Authentication & IAM",
+    "product": "CloudAuth",
+    "query_text": "How to revoke compromised user sessions immediately?",
+    "expected_answer": "Invoke /api/v1/auth/revoke-sessions endpoint with user ID.",
+    "golden_source_ids": [
+      "DOC-AUTH-105"
+    ],
+    "required_role": "Admin",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-008",
+    "category": "Authentication & IAM",
+    "product": "CloudAuth",
+    "query_text": "What is the default session timeout for idle portal users?",
+    "expected_answer": "Default idle timeout is 15 minutes.",
+    "golden_source_ids": [
+      "DOC-AUTH-106"
+    ],
+    "required_role": "GeneralUser",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-009",
+    "category": "Authentication & IAM",
+    "product": "CloudAuth",
+    "query_text": "Can external contractors use social Google logins?",
+    "expected_answer": "Only if contractor domain whitelisting is active.",
+    "golden_source_ids": [
+      "DOC-AUTH-107"
+    ],
+    "required_role": "Admin",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-010",
+    "category": "Authentication & IAM",
+    "product": "CloudAuth",
+    "query_text": "What is the root cause of error KE-AUTH-88?",
+    "expected_answer": "Expired SAML signing certificate on Identity Provider.",
+    "golden_source_ids": [
+      "KI-4012"
+    ],
+    "required_role": "SupportTier1",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-011",
+    "category": "Database Infrastructure",
+    "product": "DataStore",
+    "query_text": "What is the default minimum connection pool size in DataStore?",
+    "expected_answer": "Minimum connection pool size is 10 connections.",
+    "golden_source_ids": [
+      "DOC-DB-202"
+    ],
+    "required_role": "Engineering",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-012",
+    "category": "Database Infrastructure",
+    "product": "DataStore",
+    "query_text": "What is the maximum connection pool limit under peak traffic?",
+    "expected_answer": "Maximum connection pool limit is 100 connections.",
+    "golden_source_ids": [
+      "DOC-DB-202"
+    ],
+    "required_role": "Engineering",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-013",
+    "category": "Database Infrastructure",
+    "product": "DataStore",
+    "query_text": "Which error code indicates connection pool timeout?",
+    "expected_answer": "ERR_CONN_TIMEOUT (Code 5003).",
+    "golden_source_ids": [
+      "DOC-DB-202"
+    ],
+    "required_role": "SupportTier1",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-014",
+    "category": "Database Infrastructure",
+    "product": "DataStore",
+    "query_text": "How to prevent lock escalation during heavy batch jobs?",
+    "expected_answer": "Route batch jobs to read replicas and tune lock timeout.",
+    "golden_source_ids": [
+      "KB-PAY-802"
+    ],
+    "required_role": "Engineering",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-015",
+    "category": "Database Infrastructure",
+    "product": "DataStore",
+    "query_text": "What is the automated idle connection reap threshold?",
+    "expected_answer": "Idle connections are reaped automatically after 60 seconds.",
+    "golden_source_ids": [
+      "INC-88945"
+    ],
+    "required_role": "Engineering",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-016",
+    "category": "Database Infrastructure",
+    "product": "DataStore",
+    "query_text": "What is the recovery time objective (RTO) for database failover?",
+    "expected_answer": "RTO is guaranteed at less than 2 minutes.",
+    "golden_source_ids": [
+      "DOC-DB-205"
+    ],
+    "required_role": "Engineering",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-017",
+    "category": "Database Infrastructure",
+    "product": "DataStore",
+    "query_text": "What is the target recovery point objective (RPO)?",
+    "expected_answer": "RPO is guaranteed at less than 15 seconds.",
+    "golden_source_ids": [
+      "DOC-DB-205"
+    ],
+    "required_role": "Engineering",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-018",
+    "category": "Database Infrastructure",
+    "product": "DataStore",
+    "query_text": "What storage engine is used for high write-throughput tables?",
+    "expected_answer": "LSM-Tree storage engine with NVMe SSD caching.",
+    "golden_source_ids": [
+      "DOC-DB-206"
+    ],
+    "required_role": "Engineering",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-019",
+    "category": "Database Infrastructure",
+    "product": "DataStore",
+    "query_text": "How often are automated automated full database snapshots taken?",
+    "expected_answer": "Daily at 02:00 UTC with continuous WAL archiving.",
+    "golden_source_ids": [
+      "DOC-DB-207"
+    ],
+    "required_role": "Admin",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-020",
+    "category": "Database Infrastructure",
+    "product": "DataStore",
+    "query_text": "What is the recommended fix for error KE-PG-CONN-409?",
+    "expected_answer": "Scale PgBouncer pooler and kill idle connections.",
+    "golden_source_ids": [
+      "RES-880"
+    ],
+    "required_role": "SupportTier1",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-021",
+    "category": "API Gateway & Networking",
+    "product": "ApiGateway",
+    "query_text": "What is the default sliding-window rate limit per API key?",
+    "expected_answer": "1,000 requests per minute.",
+    "golden_source_ids": [
+      "DOC-API-303"
+    ],
+    "required_role": "GeneralUser",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-022",
+    "category": "API Gateway & Networking",
+    "product": "ApiGateway",
+    "query_text": "What HTTP error code is returned upon rate limit breach?",
+    "expected_answer": "HTTP 429 (ERR_RATE_LIMIT_EXCEEDED).",
+    "golden_source_ids": [
+      "DOC-API-303"
+    ],
+    "required_role": "GeneralUser",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-023",
+    "category": "API Gateway & Networking",
+    "product": "ApiGateway",
+    "query_text": "Can Enterprise customers request quota increase up to 10,000 req/min?",
+    "expected_answer": "Yes, via customer configuration tier upgrade.",
+    "golden_source_ids": [
+      "DOC-API-303"
+    ],
+    "required_role": "SupportTier1",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-024",
+    "category": "API Gateway & Networking",
+    "product": "ApiGateway",
+    "query_text": "What MTU size is required across VPC peering links?",
+    "expected_answer": "Standard MTU 1500 bytes (clamp MSS to 1460 bytes).",
+    "golden_source_ids": [
+      "KB-NET-701"
+    ],
+    "required_role": "Engineering",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-025",
+    "category": "API Gateway & Networking",
+    "product": "ApiGateway",
+    "query_text": "What causes HTTP 504 timeouts on checkout API across VPCs?",
+    "expected_answer": "MTU mismatch packet fragmentation black hole.",
+    "golden_source_ids": [
+      "KB-NET-701"
+    ],
+    "required_role": "Engineering",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-026",
+    "category": "API Gateway & Networking",
+    "product": "ApiGateway",
+    "query_text": "What TLS version is enforced on API Gateway entry points?",
+    "expected_answer": "TLS 1.3 only (TLS 1.0 and 1.1 are deprecated).",
+    "golden_source_ids": [
+      "DOC-API-305"
+    ],
+    "required_role": "Security",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-027",
+    "category": "API Gateway & Networking",
+    "product": "ApiGateway",
+    "query_text": "How to configure custom domain routing on API Gateway?",
+    "expected_answer": "Add CNAME record pointing to edge.api.enterprise.io.",
+    "golden_source_ids": [
+      "DOC-API-306"
+    ],
+    "required_role": "Admin",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-028",
+    "category": "API Gateway & Networking",
+    "product": "ApiGateway",
+    "query_text": "What header contains the unique request trace ID?",
+    "expected_answer": "X-Request-Trace-ID.",
+    "golden_source_ids": [
+      "DOC-API-307"
+    ],
+    "required_role": "Engineering",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-029",
+    "category": "API Gateway & Networking",
+    "product": "ApiGateway",
+    "query_text": "What is the maximum allowed payload size for POST requests?",
+    "expected_answer": "10 Megabytes (MB).",
+    "golden_source_ids": [
+      "DOC-API-308"
+    ],
+    "required_role": "GeneralUser",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-030",
+    "category": "API Gateway & Networking",
+    "product": "ApiGateway",
+    "query_text": "How to enable CORS headers for trusted frontend domains?",
+    "expected_answer": "Configure Allowed-Origins in gateway routing policy.",
+    "golden_source_ids": [
+      "DOC-API-309"
+    ],
+    "required_role": "Engineering",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-031",
+    "category": "Billing & Subscriptions",
+    "product": "BillingEngine",
+    "query_text": "What are the standard payment terms for Enterprise invoices?",
+    "expected_answer": "Net 30 days from invoice date.",
+    "golden_source_ids": [
+      "DOC-BILL-401"
+    ],
+    "required_role": "BillingClerk",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-032",
+    "category": "Billing & Subscriptions",
+    "product": "BillingEngine",
+    "query_text": "Where is vendor tax identification listed on invoices?",
+    "expected_answer": "In the invoice header under TAX ID: US-948271049.",
+    "golden_source_ids": [
+      "DOC-BILL-401"
+    ],
+    "required_role": "BillingClerk",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-033",
+    "category": "Billing & Subscriptions",
+    "product": "BillingEngine",
+    "query_text": "What sales tax percentage applies to California transactions?",
+    "expected_answer": "8.5% standard state sales tax.",
+    "golden_source_ids": [
+      "DOC-BILL-401"
+    ],
+    "required_role": "BillingClerk",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-034",
+    "category": "Billing & Subscriptions",
+    "product": "BillingEngine",
+    "query_text": "How are overage compute hours calculated at month end?",
+    "expected_answer": "Rounded up to the nearest minute and billed at $0.04/vCPU-hr.",
+    "golden_source_ids": [
+      "DOC-BILL-402"
+    ],
+    "required_role": "BillingClerk",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-035",
+    "category": "Billing & Subscriptions",
+    "product": "BillingEngine",
+    "query_text": "Can invoices be exported in automated structured JSON format?",
+    "expected_answer": "Yes, via the /api/v1/invoices/export endpoint.",
+    "golden_source_ids": [
+      "DOC-BILL-403"
+    ],
+    "required_role": "BillingClerk",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-036",
+    "category": "Billing & Subscriptions",
+    "product": "BillingEngine",
+    "query_text": "What happens if an account invoice remains unpaid after 60 days?",
+    "expected_answer": "Account enters soft-suspension status.",
+    "golden_source_ids": [
+      "DOC-BILL-404"
+    ],
+    "required_role": "BillingClerk",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-037",
+    "category": "Billing & Subscriptions",
+    "product": "BillingEngine",
+    "query_text": "How to apply promotional discount codes to annual contracts?",
+    "expected_answer": "Apply coupon code in the billing subscription portal.",
+    "golden_source_ids": [
+      "DOC-BILL-405"
+    ],
+    "required_role": "BillingClerk",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-038",
+    "category": "Billing & Subscriptions",
+    "product": "BillingEngine",
+    "query_text": "Which credit cards are accepted for automatic recurring billing?",
+    "expected_answer": "Visa, MasterCard, and American Express.",
+    "golden_source_ids": [
+      "DOC-BILL-406"
+    ],
+    "required_role": "GeneralUser",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-039",
+    "category": "Billing & Subscriptions",
+    "product": "BillingEngine",
+    "query_text": "How can customers update their billing contact email address?",
+    "expected_answer": "Under Organization Settings -> Billing Contacts tab.",
+    "golden_source_ids": [
+      "DOC-BILL-407"
+    ],
+    "required_role": "Admin",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-040",
+    "category": "Billing & Subscriptions",
+    "product": "BillingEngine",
+    "query_text": "What is the currency code for international Euro invoices?",
+    "expected_answer": "EUR.",
+    "golden_source_ids": [
+      "DOC-BILL-408"
+    ],
+    "required_role": "BillingClerk",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-041",
+    "category": "Security & Compliance",
+    "product": "SecGuard",
+    "query_text": "How frequently must production API keys and secrets be rotated?",
+    "expected_answer": "At least every 90 days according to security compliance.",
+    "golden_source_ids": [
+      "SOP-SEC-01"
+    ],
+    "required_role": "Security",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-042",
+    "category": "Security & Compliance",
+    "product": "SecGuard",
+    "query_text": "What encryption cipher is used for protecting data at rest?",
+    "expected_answer": "AES-256 GCM with KMS customer-managed keys.",
+    "golden_source_ids": [
+      "DOC-SEC-501"
+    ],
+    "required_role": "Security",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-043",
+    "category": "Security & Compliance",
+    "product": "SecGuard",
+    "query_text": "What is the mandatory VPN requirement for remote employees?",
+    "expected_answer": "Corporate Zero-Trust VPN with hardware MFA tokens.",
+    "golden_source_ids": [
+      "POL-HR-20"
+    ],
+    "required_role": "GeneralUser",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-044",
+    "category": "Security & Compliance",
+    "product": "SecGuard",
+    "query_text": "How often are automated TLS certificates renewed?",
+    "expected_answer": "Every 60 days via Let's Encrypt / Cert-Manager.",
+    "golden_source_ids": [
+      "DOC-SEC-503"
+    ],
+    "required_role": "Engineering",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-045",
+    "category": "Security & Compliance",
+    "product": "SecGuard",
+    "query_text": "What is the target p99 latency for checkout microservices?",
+    "expected_answer": "Maximum 250ms at p99 latency.",
+    "golden_source_ids": [
+      "SOP-OPS-08"
+    ],
+    "required_role": "Engineering",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-046",
+    "category": "Security & Compliance",
+    "product": "SecGuard",
+    "query_text": "How is PII data sanitized prior to analytics ingestion?",
+    "expected_answer": "Masked via SHA-256 pseudonymization and tokenization.",
+    "golden_source_ids": [
+      "SOP-SEC-05"
+    ],
+    "required_role": "Security",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-047",
+    "category": "Security & Compliance",
+    "product": "SecGuard",
+    "query_text": "What is the protocol for reporting suspected data breaches?",
+    "expected_answer": "Immediate page to SecOps within 15 minutes.",
+    "golden_source_ids": [
+      "SOP-SEC-09"
+    ],
+    "required_role": "Security",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-048",
+    "category": "Security & Compliance",
+    "product": "SecGuard",
+    "query_text": "Are production SSH bastion keys shared across teams?",
+    "expected_answer": "Strictly prohibited; individual certificate-based SSH only.",
+    "golden_source_ids": [
+      "POL-SEC-12"
+    ],
+    "required_role": "Engineering",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-049",
+    "category": "Security & Compliance",
+    "product": "SecGuard",
+    "query_text": "What is the platform uptime SLA commitment for enterprise?",
+    "expected_answer": "99.99% monthly availability SLA.",
+    "golden_source_ids": [
+      "DOC-SEC-509"
+    ],
+    "required_role": "GeneralUser",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  },
+  {
+    "query_id": "BQ-050",
+    "category": "Security & Compliance",
+    "product": "SecGuard",
+    "query_text": "Where are immutable audit logs stored?",
+    "expected_answer": "In write-once-read-many (WORM) S3 Glacier buckets.",
+    "golden_source_ids": [
+      "DOC-SEC-510"
+    ],
+    "required_role": "Security",
+    "min_acceptable_score": 0.8,
+    "expected_failure_category": "Correct"
+  }
+]
