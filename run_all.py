@@ -47,10 +47,16 @@ def main():
     
     for idx, (dir_name, title, practical) in enumerate(MODULES, 1):
         table.add_row(str(idx), title, practical)
+    table.add_row("8", "[bold magenta]Interactive Enterprise Web Console[/bold magenta]", "Launch Modern Web UI for all 7 modules (http://127.0.0.1:8000)")
     console.print(table)
 
     if len(sys.argv) > 1:
         choice = sys.argv[1]
+        if choice == "8" or choice.lower() == "ui":
+            console.print("\n[bold magenta]Launching Enterprise Web Console...[/bold magenta]")
+            ui_server_path = BASE / "ui_server.py"
+            subprocess.run([python_exe, str(ui_server_path)])
+            return
         try:
             mod_idx = int(choice) - 1
             if 0 <= mod_idx < len(MODULES):

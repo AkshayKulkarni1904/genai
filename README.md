@@ -72,13 +72,31 @@ genai/
 
 ## Quickstart & Execution
 
-### 1. Execute All Modules Sequentially
+### 1. Launch Interactive Enterprise Web Console (Recommended)
+You can launch the full-featured, modern Web UI to interactively test, visualize, and inspect all 7 modules:
+
+```powershell
+# Option A: PowerShell Launcher
+.\start_ui.ps1
+
+# Option B: Windows Command Prompt Launcher
+.\start_ui.bat
+
+# Option C: Direct Python Server Launch
+.\venv\Scripts\python.exe ui_server.py --port 8000
+
+# Option D: Via Master CLI Orchestrator
+.\venv\Scripts\python.exe run_all.py 8
+```
+Once started, navigate to **http://127.0.0.1:8000** in your browser.
+
+### 2. Execute All Modules via CLI
 ```powershell
 # From C:\Users\Akshay\.gemini\antigravity\scratch\genai
 .\venv\Scripts\python.exe run_all.py
 ```
 
-### 2. Execute a Single Module
+### 3. Execute a Single Module via CLI
 ```powershell
 # Run Module 7
 .\venv\Scripts\python.exe run_all.py 1
