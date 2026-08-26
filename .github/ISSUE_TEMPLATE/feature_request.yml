@@ -1,0 +1,29 @@
+name: Feature Request
+description: Propose an idea or enhancement for the GenAI codebase
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have an idea to improve the Enterprise GenAI Practical Engineering repository? We'd love to hear it!
+  - type: input
+    id: feature-title
+    attributes:
+      label: Feature Title
+      placeholder: "e.g., Add Hybrid Sparse-Dense BM25 Retriever in Module 7"
+    validations:
+      required: true
+  - type: textarea
+    id: problem-statement
+    attributes:
+      label: Problem or Motivation
+      description: Is your feature request related to a problem or practical pattern?
+    validations:
+      required: true
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed Solution & Architectural Impact
+      description: Describe the solution you'd like to see implemented.
+    validations:
+      required: true

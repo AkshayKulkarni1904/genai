@@ -28,7 +28,7 @@ def run_single_module(module_dir: str, title: str, practical: str, python_exe: s
     mod_path = BASE / module_dir / "main.py"
     res = subprocess.run([python_exe, str(mod_path)], cwd=str(BASE / module_dir))
     if res.returncode != 0:
-        console.print(f"[bold red]? Error executing {title}[/bold red]")
+        console.print(f"[bold red]✘ Error executing {title}[/bold red]")
         return False
     return True
 
@@ -89,9 +89,9 @@ def main():
         
     console.print(summary_table)
     if all_ok:
-        console.print("\n[bold green]? All 7 Modules Executed and Verified Successfully![/bold green]")
+        console.print("\n[bold green]✔ All 7 Modules Executed and Verified Successfully![/bold green]")
     else:
-        console.print("\n[bold red]? Some modules encountered issues.[/bold red]")
+        console.print("\n[bold red]✘ Some modules encountered issues.[/bold red]")
 
 if __name__ == "__main__":
     main()
