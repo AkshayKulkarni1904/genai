@@ -2,8 +2,6 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
-# C extensions
 *.so
 
 # Distribution / packaging
@@ -69,3 +67,12 @@ Thumbs.db
 # Logs and databases
 *.log
 *.sqlite3-journal
+
+# Secrets & Environment variables
+.env
+*.env
+
+# Agent Customizations & Assistant Runtime (Do NOT track)
+.agents/
+.agents
+GEMINI.md

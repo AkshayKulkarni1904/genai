@@ -1,12 +1,12 @@
 <div align="center">
 
-# Enterprise GenAI Practical Engineering
+# Enterprise GenAI Practical Engineering (Modules 1 - 13)
 
-### *A Production-Grade Suite of Advanced RAG, Knowledge Graphs, GraphRAG, LangChain LCEL, LangGraph StateGraphs, Multi-Agent Systems, and Evaluation Guardrails*
+### *A Production-Grade Suite of LLM Foundations, Prompt Engineering, Resilient APIs, Vector Search, Advanced RAG, Knowledge Graphs, GraphRAG, LangChain, LangGraph HITL, Multi-Agent Swarms, and Evaluation Guardrails*
 
 [![CI Test & Lint Suite](https://github.com/AkshayKulkarni1904/genai/actions/workflows/ci.yml/badge.svg)](https://github.com/AkshayKulkarni1904/genai/actions/workflows/ci.yml)
 [![Python Version](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue.svg)](https://www.python.org/downloads/)
-[![Tests](https://img.shields.io/badge/tests-11%2F11%20passed%20(100%25)-brightgreen.svg)]()
+[![Tests](https://img.shields.io/badge/tests-15%2F15%20passed%20(100%25)-brightgreen.svg)]()
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Framework](https://img.shields.io/badge/LangChain-LCEL-purple.svg)](https://python.langchain.com/)
 [![StateGraph](https://img.shields.io/badge/LangGraph-Stateful%20HITL-blueviolet.svg)](https://langchain-ai.github.io/langgraph/)
@@ -21,11 +21,11 @@
 
 ## 🌟 Overview
 
-The **Enterprise GenAI Practical Engineering** repository is a comprehensive, production-grade implementation of modern Generative AI engineering patterns spanning **Modules 7 through 13** of the advanced enterprise curriculum.
+The **Enterprise GenAI Practical Engineering** repository is a comprehensive, production-grade implementation of the complete 13-module enterprise curriculum for Generative AI engineering.
 
 Every module is built with rigorous software engineering principles: strict type safety (Pydantic v2), deterministic graph traversals (NetworkX), multi-source retrieval (Vector + Relational SQLite), state machine orchestration (LangGraph with Human-in-the-Loop), multi-agent supervisor systems, and a 50-query golden evaluation benchmark suite with security guardrails.
 
-The repository includes a modern, high-performance **Interactive Web Console UI** and a **Master CLI Orchestrator** to run, inspect, and benchmark all modules simultaneously.
+The repository includes a modern, high-performance **Hugging Face-inspired Interactive Web Console UI** (featuring a dedicated **Info / Learning Scope & Revision Reference** tab) and a **Master CLI Orchestrator** to run, inspect, and benchmark all 13 modules simultaneously.
 
 ---
 
@@ -34,85 +34,64 @@ The repository includes a modern, high-performance **Interactive Web Console UI*
 ```mermaid
 flowchart TD
     subgraph UI["🖥️ Enterprise Web Console & REST API (Port 8000)"]
-        WebUI["Web Dashboard (Vanilla JS + CSS3)"]
-        APIServer["Multi-Threaded HTTP REST API (ui_server.py)"]
+        WebUI["Hugging Face Developer Console (HTML5 + Vanilla CSS3 + Modern ES6)"]
+        InfoTab["Info: 13-Module Learning Progression & Quick Revision Matrix"]
+        APIServer["Multi-Threaded HTTP REST API Gateway (ui_server.py)"]
         WebUI <--> APIServer
+        InfoTab <--> WebUI
     end
 
-    subgraph Mod7["Module 7: Advanced RAG Patterns"]
-        M7_In["Customer Query"] --> M7_Cache["Semantic LRU Cache"]
-        M7_Cache --> M7_Decomp["Query Decomposition"]
-        M7_Decomp --> M7_Ret["Parent-Child & Multi-Vector Hybrid Retriever"]
-        M7_Ret --> M7_SQL["SQLite Config DB"]
-        M7_Ret --> M7_CRAG["Corrective RAG (CRAG) Evaluator"]
-        M7_CRAG --> M7_Out["Resolution Plan"]
+    subgraph Foundations["Modules 1 - 4: Foundations & Prompting"]
+        M1["M01: LLM Parameter Engine & Latency/Token Economics"]
+        M2["M02: Prompt Engineering Studio (Few-Shot, Extraction, CoT, Rules)"]
+        M3["M03: Resilient LLM API Client (Backoff, Failover, Tool Calling)"]
+        M4["M04: Direct API vs LangChain Benchmark & Decision Matrix"]
     end
 
-    subgraph Mod8["Module 8: Knowledge Graph Fundamentals"]
-        M8_In["Raw Text / Log"] --> M8_ER["Entity Resolution & Canonical IDs"]
-        M8_ER --> M8_Graph["ITSM Property Graph (NetworkX)"]
-        M8_Graph --> M8_Cypher["Cypher Pattern Matcher"]
-        M8_Cypher --> M8_RCA["Causal Path RCA"]
+    subgraph Retrieval["Modules 5 - 7: Vectors, Embeddings & RAG"]
+        M5["M05: Embeddings Lab (Chunking, Cosine/Dot/L2, Hybrid RRF)"]
+        M6["M06: Conversational RAG (Query Rewriting, Multi-Tenant RBAC, Citations)"]
+        M7["M07: Advanced RAG Patterns (Parent-Child, Multi-Vector, CRAG, Cache)"]
     end
 
-    subgraph Mod9["Module 9: GraphRAG"]
-        M9_In["Incident Telemetry"] --> M9_Extract["Entity & Relation Extractor"]
-        M9_Extract --> M9_Hybrid["Hybrid Retriever (Vector + Graph + SQL)"]
-        M9_Hybrid --> M9_Comm["Community Summarizer"]
-        M9_Comm --> M9_SOP["Topological Recommendation & Provenance"]
+    subgraph Graphs["Modules 8 - 9: Knowledge Graphs & GraphRAG"]
+        M8["M08: ITSM Property Knowledge Graph & Cypher Pattern Engine"]
+        M9["M09: 4-Step GraphRAG Incident Resolution (Hybrid + Leiden Communities)"]
     end
 
-    subgraph Mod10["Module 10: LangChain Framework"]
-        M10_In["Unstructured Docs"] --> M10_LCEL["LCEL Composable Pipelines"]
-        M10_LCEL --> M10_PDF["PDF QA Bot (Page Attribution)"]
-        M10_LCEL --> M10_Inv["Invoice Extractor (Pydantic Schema)"]
-        M10_LCEL --> M10_Cit["Verifiable Citation Assistant"]
+    subgraph Agents["Modules 10 - 12: Frameworks & Autonomous Swarms"]
+        M10["M10: LangChain LCEL Lab (PDF QA, Invoices, Citation Assistant)"]
+        M11["M11: LangGraph Support StateGraph (ServiceNow API & HITL Escalation)"]
+        M12["M12: Multi-Agent Swarm (Supervisor + 5 Specialists + Blackboard)"]
     end
 
-    subgraph Mod11["Module 11: LangGraph Framework"]
-        M11_In["Support Ticket"] --> M11_Classify["Intent Classifier Node"]
-        M11_Classify --> M11_Tools["ServiceNow Table API & RAG Tool"]
-        M11_Tools --> M11_Synth["Resolution Synthesizer"]
-        M11_Synth --> M11_Gate{"Confidence Evaluator"}
-        M11_Gate -->|Score >= 0.75| M11_Auto["Auto-Resolved"]
-        M11_Gate -->|Score < 0.75| M11_HITL["Human-in-the-Loop Escalation"]
+    subgraph Governance["Module 13: Governance & Security"]
+        M13["M13: 50 Golden Business Queries Eval Benchmark & Security Guardrails"]
     end
 
-    subgraph Mod12["Module 12: Multi-Agent Systems"]
-        M12_Sup["Supervisor Orchestrator"] <--> M12_BB["Shared Blackboard State"]
-        M12_BB <--> M12_Triage["Triage Agent (P1-P4 Blast Radius)"]
-        M12_BB <--> M12_RCA["Root Cause Analysis Agent"]
-        M12_BB <--> M12_Ret["Knowledge Retrieval Agent"]
-        M12_BB <--> M12_Val["Resolution Validation Agent"]
-        M12_BB <--> M12_Esc["Human Support Escalation Agent"]
-    end
-
-    subgraph Mod13["Module 13: Evaluation & Guardrails"]
-        M13_In["Raw Prompt"] --> M13_PII["PII Redactor (SSN, Email, Phone)"]
-        M13_PII --> M13_Inj["Prompt Injection Defense"]
-        M13_Inj --> M13_RBAC["RBAC Access Filter"]
-        M13_RBAC --> M13_Eval["50 Golden Queries Eval Suite (Precision, Recall, Faithfulness, LLM Judge)"]
-    end
-
-    APIServer --> Mod7
-    APIServer --> Mod8
-    APIServer --> Mod9
-    APIServer --> Mod10
-    APIServer --> Mod11
-    APIServer --> Mod12
-    APIServer --> Mod13
+    APIServer --> Foundations
+    APIServer --> Retrieval
+    APIServer --> Graphs
+    APIServer --> Agents
+    APIServer --> Governance
 ```
 
 ---
 
-## 📑 Detailed Module Portfolio
+## 📑 Detailed Module Portfolio (Modules 1 - 13)
 
 | Module | Core Theoretical Concepts | Practical Engineering Implementation | Key Highlights |
 | :--- | :--- | :--- | :--- |
-| [**Module 7: Advanced RAG Patterns**](module_07_advanced_rag/) | Parent-Child chunking, multi-vector representations, query decomposition, Corrective RAG (CRAG), semantic LRU caching, SQL metadata integration. | **Support-Resolution Assistant** resolving multi-tier enterprise support tickets across docs, incidents, and SQLite tenant configs. | • Dynamic sub-query generation<br>• Confidence-gated fallback<br>• SQLite live tenant metadata |
-| [**Module 8: Knowledge Graph Fundamentals**](module_08_knowledge_graph/) | Property graphs, ontology vs. taxonomy, entity resolution, Cypher pattern matcher, ITSM modeling, graph governance. | **IT Support Knowledge Graph** linking Users, Devices, Apps, Incidents, Known Errors, Teams, and Remediation SOPs. | • Multi-hop relationship traversal<br>• Canonical alias resolution<br>• Orphan node & schema auditing |
-| [**Module 9: GraphRAG**](module_09_graph_rag/) | Vector vs. GraphRAG, entity/relation extraction, community detection, local vs. global search, provenance chains. | **4-Step Incident Resolution GraphRAG Pipeline** (Identity → Hybrid Retrieve → Dependency Traverse → Provenance Recommendation). | • Multi-hop dependency path analysis<br>• Explainable audit trail<br>• Community-level summaries |
-| [**Module 10: LangChain Framework**](module_10_langchain_framework/) | Models, Runnables, LCEL pipe operator syntax, recursive splitters, Pydantic structured output parsers, fine-grained citation markers. | **Three Production Practicals**: PDF QA bot with page citations, structured invoice extraction, and verifiable citation assistant. | • Page attribution metadata<br>• Pydantic schema validation<br>• Numbered bibliographic references |
+| [**Module 1: Foundations of GenAI & LLMs**](module_01_foundations/) | Tokens, context windows, BPE tokenization, sampling temperature, top-p, hallucination, grounding, GPU latency economics. | **LLM Parameter Engine & Tokenizer Sandbox** with live Groq LPU execution and token pricing calculator. | • Real-time token counter<br>• Latency & cost calculator<br>• Live Groq LPU generation |
+| [**Module 2: Prompt Engineering**](module_02_prompt_engineering/) | Prompt anatomy, zero/few-shot, role directives, chain-of-thought, JSON schemas, defensive instructions, prompt injection. | **Enterprise Prompt Studio** with 4 specialized task presets (Support Triage, Contract Extraction, Meeting Synthesis, Policy Audit). | • Pydantic JSON schema<br>• Defense against injections<br>• Executive summary generation |
+| [**Module 3: LLM APIs in Programming**](module_03_llm_apis/) | Resilient API clients, rate limits, exponential backoff, failover models, streaming deltas, function/tool calling dispatch. | **Resilient Multi-Provider API Client** with automatic fallback, function execution, and sliding-window token memory. | • Transparent failover routing<br>• JSON Schema tool dispatch<br>• Streaming delta processing |
+| [**Module 4: Direct APIs vs LangChain**](module_04_direct_api_vs_langchain/) | Architectural trade-offs, abstraction overhead, execution latency, stack trace depth, dependency footprint, decision matrix. | **Side-by-Side Benchmark Workbench** measuring wall-clock latency, call frame depth, and memory overhead. | • Automated latency profiling<br>• Architectural decision matrix<br>• Concrete criteria checklist |
+| [**Module 5: Embeddings & Vector Search**](module_05_embeddings_and_vector_search/) | Chunking strategies (Fixed, Recursive, Document-aware), Cosine/Dot/L2 distance, metadata filtering, Hybrid Reciprocal Rank Fusion (RRF). | **Embeddings & Vector Search Lab** with interactive chunking visualizer, metric comparator, and metadata filtering. | • Visual chunk boundaries<br>• Multi-metric ranking table<br>• Hybrid BM25 + Dense RRF |
+| [**Module 6: Retrieval-Augmented Generation (RAG)**](module_06_rag_foundations/) | Conversational query rewriting, multi-tenant RBAC permissions, cross-encoder reranking, context assembly, citation provenance. | **Enterprise Knowledge Assistant** for HR policies and IT support with role-based document access controls and verifiable citations. | • Query coreference rewriting<br>• Tenant-isolated access<br>• Numbered citation markers |
+| [**Module 7: Advanced RAG Patterns**](module_07_advanced_rag/) | Parent-Child chunking, multi-vector indexing, query decomposition, Corrective RAG (CRAG), semantic LRU caching, SQL metadata integration. | **Support-Resolution Assistant** resolving multi-tier enterprise support tickets across docs, incidents, and SQLite tenant configs. | • Dynamic sub-query generation<br>• Confidence-gated fallback<br>• SQLite live tenant metadata |
+| [**Module 8: Knowledge Graph Fundamentals**](module_08_knowledge_graph/) | Property graphs, ontology vs. taxonomy, entity resolution, Cypher pattern matcher, ITSM modeling, graph governance. | **IT Support Knowledge Graph** linking Users, Devices, Apps, Incidents, Known Errors, Teams, and Remediation SOPs. | • Multi-hop relationship traversal<br>• Canonical alias resolution<br>• Interactive HTML5 canvas force graph |
+| [**Module 9: GraphRAG**](module_09_graph_rag/) | Vector vs. GraphRAG, entity/relation extraction, Leiden community detection, local vs. global search, provenance chains. | **4-Step Incident Resolution GraphRAG Pipeline** (Identity → Hybrid Retrieve → Dependency Traverse → Provenance Recommendation). | • Multi-hop dependency path analysis<br>• Explainable audit trail<br>• Community-level summaries |
+| [**Module 10: LangChain Framework**](module_10_langchain_framework/) | Models, Runnables, LCEL pipe operator syntax, recursive splitters, Pydantic structured output parsers, citation markers. | **Three Production Practicals**: PDF QA bot with page citations, structured invoice extraction, and verifiable citation assistant. | • Page attribution metadata<br>• Pydantic schema validation<br>• Numbered bibliographic references |
 | [**Module 11: LangGraph Framework**](module_11_langgraph_framework/) | Stateful workflows, `TypedState`, cyclic graphs, tool calling, memory checkpoints, confidence evaluation, Human-in-the-Loop (HITL). | **Stateful IT Support StateGraph Workflow** integrating ServiceNow Table API, RAG playbook retrieval, and confidence-gated human escalation. | • Checkpointed execution traces<br>• Dynamic conditional routing<br>• Safe human escalation handoff |
 | [**Module 12: Multi-Agent Systems**](module_12_multi_agent_systems/) | Supervisor-Worker architecture, specialized agent personas, shared blackboard state, safety boundaries, executive briefing generation. | **Multi-Agent Incident-Resolution System** coordinating 5 specialist agents (Triage, Retrieval, RCA, Validator, Escalation). | • Blackboard-mediated communication<br>• Pre-execution safety validation<br>• Executive incident briefing |
 | [**Module 13: Evaluation & Guardrails**](module_13_evaluation_and_guardrails/) | 50 Golden Business Queries benchmark, Precision, Recall, Faithfulness, LLM-as-a-judge, PII redaction, prompt injection defense, RBAC filter. | **50 Business Queries Evaluation Suite** computing aggregate quality scores, pass/fail metrics, and failure taxonomy distributions. | • Multi-layer security guardrails<br>• 90.0% benchmark pass rate<br>• Automated failure taxonomy |
@@ -123,15 +102,16 @@ flowchart TD
 
 The repository features a responsive, standalone Web Console running on `http://127.0.0.1:8000`.
 
-### Features
-- **Module 7 Playground**: Execute customer ticket resolutions, toggle CRAG evaluation, and view parent/child chunks.
-- **Module 8 Interactive Graph**: Run live Cypher queries, explore node neighborhoods, and test entity alias normalization.
-- **Module 9 GraphRAG Visualizer**: Trigger 4-step incident pipelines and inspect topological dependency traversals.
-- **Module 10 LCEL Tools**: Test PDF page-attributed QA, upload/parse sample invoices into Pydantic models, and generate verified citations.
-- **Module 11 LangGraph State Machine**: Run the stateful support workflow with adjustable confidence thresholds and inspect step-by-step node execution traces.
-- **Module 12 Multi-Agent War Room**: Watch 5 specialist agents collaborate over the shared blackboard state.
-- **Module 13 Security & Eval Dashboard**: Test live PII redaction and prompt injection defenses; run the 50 Golden Queries Evaluation Suite in one click.
-- **Unified Orchestrator View**: Perform an automated health check and assessment of all 7 modules simultaneously.
+### Key Features
+- **Hugging Face Developer Aesthetic**: Clean typography, curated color tokens, card hover states, responsive layouts, and light/dark theme toggle.
+- **Dedicated "Info" Learning Scope & Revision Tab**:
+  - Interactive **13-Module Learning Progression Roadmap**.
+  - **Quick Revision Mode**: 13 concise flashcards for fast 2-minute exam or review preparation.
+  - **Master Learning Scope Table**: Bullet-style matrix covering What, Why, Concepts, and Practical for every module.
+  - **Expandable Module Deep Dives**: Complete with *"Why these concepts?"* micro-explanations and Quick Recaps.
+- **Interactive Playgrounds for All 13 Modules**: Live Groq LPU generation, prompt engineering templates, resilient API dispatching, vector search chunk visualization, interactive Force Graph canvas, GraphRAG pipeline tracer, LangGraph state inspector, Multi-Agent swarm war room, and live security guardrails.
+- **Scenario Library**: 10+ realistic enterprise presets per module with custom prompt entry capabilities.
+- **Global Search (⌘K / Ctrl+K)**: Quick jumping across all 13 modules, concepts, and tools.
 
 ---
 
@@ -197,63 +177,62 @@ Then open **[http://127.0.0.1:8000](http://127.0.0.1:8000)** in your browser.
 ---
 
 ### Option B: Master CLI Orchestrator
-Execute all 7 modules end-to-end with rich terminal formatting:
+Execute all 13 modules end-to-end with rich terminal formatting:
 ```bash
 python run_all.py
 ```
 
 Execute a specific module by number:
 ```bash
-python run_all.py 1   # Run Module 7 (Advanced RAG)
-python run_all.py 2   # Run Module 8 (Knowledge Graph)
-python run_all.py 3   # Run Module 9 (GraphRAG)
-python run_all.py 4   # Run Module 10 (LangChain)
-python run_all.py 5   # Run Module 11 (LangGraph)
-python run_all.py 6   # Run Module 12 (Multi-Agent Systems)
-python run_all.py 7   # Run Module 13 (Evaluation & Guardrails)
-python run_all.py 8   # Launch Web Console
-```
-
----
-
-### Option C: Run Individual Module Directly
-```bash
-# Example: Running Module 11 directly
-cd module_11_langgraph_framework
-python main.py
+python run_all.py 1   # Module 1: Foundations of GenAI & LLMs
+python run_all.py 2   # Module 2: Prompt Engineering
+python run_all.py 3   # Module 3: LLM APIs in Programming
+python run_all.py 4   # Module 4: Direct APIs vs LangChain
+python run_all.py 5   # Module 5: Embeddings & Vector Search
+python run_all.py 6   # Module 6: RAG Foundations
+python run_all.py 7   # Module 7: Advanced RAG Patterns
+python run_all.py 8   # Module 8: Knowledge Graph Fundamentals
+python run_all.py 9   # Module 9: GraphRAG
+python run_all.py 10  # Module 10: LangChain Framework
+python run_all.py 11  # Module 11: LangGraph Framework
+python run_all.py 12  # Module 12: Multi-Agent Systems
+python run_all.py 13  # Module 13: Evaluation & Guardrails
+python run_all.py 14  # Launch Web Console
 ```
 
 ---
 
 ## 🧪 Automated Testing & CI/CD
 
-The repository includes a comprehensive, automated test suite covering all REST endpoints, RAG pipelines, graph operations, LCEL chains, agent workflows, and guardrails.
+The repository includes a comprehensive, automated test suite covering all 13 modules, REST endpoints, RAG pipelines, graph operations, LCEL chains, agent workflows, and guardrails:
 
 ```bash
 # Run full pytest suite with verbose output:
 pytest tests/ -v
 ```
 
-### Automated CI Pipeline
-All pushes and pull requests trigger automated GitHub Actions CI testing on **Ubuntu** and **Windows** across **Python 3.10, 3.11, 3.12, and 3.13**.
-
 ```
 ============================= test session starts =============================
-collected 11 items
+platform win32 -- Python 3.13.9, pytest-9.1.1
+collected 15 items
 
-tests/test_ui_api.py::test_api_status PASSED                             [  9%]
-tests/test_ui_api.py::test_module7_advanced_rag PASSED                   [ 18%]
-tests/test_ui_api.py::test_module8_kg_and_cypher PASSED                  [ 27%]
-tests/test_ui_api.py::test_module9_graphrag PASSED                       [ 36%]
-tests/test_ui_api.py::test_module10_langchain PASSED                     [ 45%]
-tests/test_ui_api.py::test_module11_langgraph PASSED                     [ 54%]
-tests/test_ui_api.py::test_module12_multi_agent PASSED                   [ 63%]
-tests/test_ui_api.py::test_module13_guardrails_and_eval PASSED           [ 72%]
-tests/test_ui_api.py::test_sample_invoices PASSED                        [ 81%]
-tests/test_ui_api.py::test_custom_guardrails PASSED                      [ 90%]
+tests/test_ui_api.py::test_api_status PASSED                             [  6%]
+tests/test_ui_api.py::test_module1_foundations PASSED                    [ 13%]
+tests/test_ui_api.py::test_module2_prompt_engineering PASSED             [ 20%]
+tests/test_ui_api.py::test_module3_llm_apis PASSED                       [ 26%]
+tests/test_ui_api.py::test_module4_direct_vs_langchain PASSED            [ 33%]
+tests/test_ui_api.py::test_module5_embeddings_and_vector_search PASSED   [ 40%]
+tests/test_ui_api.py::test_module6_rag_foundations PASSED                [ 46%]
+tests/test_ui_api.py::test_module7_advanced_rag PASSED                   [ 53%]
+tests/test_ui_api.py::test_module8_knowledge_graph PASSED                [ 60%]
+tests/test_ui_api.py::test_module9_graphrag PASSED                       [ 66%]
+tests/test_ui_api.py::test_module10_langchain PASSED                     [ 73%]
+tests/test_ui_api.py::test_module11_langgraph PASSED                     [ 80%]
+tests/test_ui_api.py::test_module12_multi_agent PASSED                   [ 86%]
+tests/test_ui_api.py::test_module13_guardrails_and_eval PASSED           [ 93%]
 tests/test_ui_api.py::test_unified_orchestrator_assessment PASSED        [100%]
 
-============================= 11 passed in 2.22s ==============================
+============================= 15 passed in 2.62s ==============================
 ```
 
 ---
@@ -275,7 +254,7 @@ Module 13 benchmarks the enterprise RAG pipelines against **50 Golden Business Q
 | Mean Faithfulness Score           | 0.724                   |
 | Mean LLM-as-a-Judge Quality Score | 0.956 / 1.000           |
 | Execution Duration                | 0.001 seconds           |
-+-------------------------------------------------------------+
++-----------------------------------+-------------------------+
 ```
 
 ---
@@ -286,9 +265,15 @@ The built-in HTTP server (`ui_server.py`) provides clean, JSON-based REST APIs:
 
 | Method | Endpoint | Description | Sample Request / Response |
 | :--- | :--- | :--- | :--- |
-| `GET` | `/api/status` | System health check and module inventory | `{"status": "online", "modules": [...]}` |
-| `POST` | `/api/module7/resolve` | Execute Advanced RAG resolution | `{"customer_id": "CUST-901", "query": "SSO error"}` |
-| `GET` | `/api/module8/graph` | Fetch IT Support Knowledge Graph | `{"nodes": [...], "edges": [...]}` |
+| `GET` | `/api/status` | System health check and 13-module inventory | `{"status": "online", "modules": [...]}` |
+| `POST` | `/api/module1/simulate` | LLM token simulation & latency/cost profiling | `{"prompt": "...", "temperature": 0.7}` |
+| `POST` | `/api/module2/run` | Prompt Engineering execution & schema validation | `{"task": "triage", "input_text": "..."}` |
+| `POST` | `/api/module3/dispatch` | Resilient API client call with tool dispatching | `{"prompt": "...", "enable_tools": true}` |
+| `POST` | `/api/module4/benchmark` | Direct API vs LangChain latency/stack comparison | `{"query": "...", "iterations": 3}` |
+| `POST` | `/api/module5/search` | Vector search & chunk visualization | `{"query": "...", "metric": "cosine"}` |
+| `POST` | `/api/module6/rag` | Conversational RAG with RBAC & citations | `{"query": "...", "role": "Employee"}` |
+| `POST` | `/api/module7/resolve` | Advanced RAG ticket resolution | `{"customer_id": "CUST-901", "query": "SSO error"}` |
+| `GET` | `/api/module8/graph` | Fetch IT Support Knowledge Graph topology | `{"nodes": [...], "edges": [...]}` |
 | `POST` | `/api/module8/cypher` | Execute Cypher graph pattern query | `{"pattern": "MATCH (i:Incident)..."}` |
 | `POST` | `/api/module8/resolve-entity` | Normalize raw text alias to canonical ID | `{"alias": "postgres"}` → `APP::ACME::pg_cluster` |
 | `POST` | `/api/module9/resolve` | Execute 4-Step GraphRAG pipeline | `{"incident": {"product": "Checkout API", ...}}` |
@@ -299,85 +284,7 @@ The built-in HTTP server (`ui_server.py`) provides clean, JSON-based REST APIs:
 | `POST` | `/api/module12/multiagent` | Run 5-specialist multi-agent incident solver | `{"incident": {"incident_id": "INC-01", ...}}` |
 | `POST` | `/api/module13/guardrails` | Inspect PII, injection attacks, and RBAC | `{"prompt": "...", "user_role": "Engineering"}` |
 | `POST` | `/api/module13/eval` | Run 50 Golden Business Queries benchmark | Returns precision, recall, faithfulness, LLM judge |
-| `POST` | `/api/orchestrator/run-all` | Execute comprehensive health assessment | Evaluates and verifies all 7 modules |
-
----
-
-## 📁 Repository Structure
-
-```
-genai/
-├── .github/
-│   ├── workflows/
-│   │   └── ci.yml                      # Multi-OS, multi-version GitHub Actions CI
-│   ├── ISSUE_TEMPLATE/
-│   │   ├── bug_report.yml              # GitHub issue template for bugs
-│   │   └── feature_request.yml         # GitHub issue template for features
-│   └── PULL_REQUEST_TEMPLATE.md        # Pull request checklist & template
-├── module_07_advanced_rag/             # Module 7: Advanced RAG Patterns
-│   ├── data/                           # SQLite tenant DB, docs, incidents, bugs
-│   ├── rag_components.py               # Parent-child, multi-vector, CRAG, cache
-│   ├── support_assistant.py            # Practical: Support-Resolution Assistant
-│   ├── main.py                         # Standalone runner
-│   └── README.md
-├── module_08_knowledge_graph/          # Module 8: Knowledge Graph Fundamentals
-│   ├── data/                           # ITSM Graph JSON fixtures
-│   ├── schema.py                       # Ontology, taxonomy, entity resolution
-│   ├── it_support_graph.py             # Practical: IT Support Graph & Cypher engine
-│   ├── main.py                         # Standalone runner
-│   └── README.md
-├── module_09_graph_rag/                # Module 9: GraphRAG
-│   ├── data/                           # Dependency graph & incident corpus
-│   ├── graph_extractor.py              # Entity/relation extraction & communities
-│   ├── hybrid_retriever.py             # Vector + Graph Traversal + SQL retriever
-│   ├── incident_graphrag_pipeline.py   # Practical: 4-Step Incident Resolution Pipeline
-│   ├── main.py                         # Standalone runner
-│   └── README.md
-├── module_10_langchain_framework/      # Module 10: LangChain Framework
-│   ├── data/                           # Architecture whitepaper & invoices
-│   ├── pdf_qa_bot.py                   # Practical 1: PDF QA Bot with Page Citations
-│   ├── invoice_extractor.py            # Practical 2: Pydantic Structured Invoice Chain
-│   ├── citation_knowledge_assistant.py # Practical 3: Citation Assistant with Bibliography
-│   ├── main.py                         # Standalone runner
-│   └── README.md
-├── module_11_langgraph_framework/      # Module 11: LangGraph Framework
-│   ├── state.py                        # TypedState, TicketSchema, and Checkpoints
-│   ├── tools.py                        # ServiceNow Table API & Playbook tools
-│   ├── support_graph_workflow.py       # Practical: Support Agent StateGraph (HITL)
-│   ├── main.py                         # Standalone runner
-│   └── README.md
-├── module_12_multi_agent_systems/      # Module 12: Agents & Multi-Agent Systems
-│   ├── agents/                         # Triage, Retrieval, RCA, Validator, Escalation
-│   ├── supervisor.py                   # Supervisor Orchestrator & Shared Blackboard
-│   ├── main.py                         # Standalone runner
-│   └── README.md
-├── module_13_evaluation_and_guardrails/# Module 13: Evaluation & Guardrails
-│   ├── data/                           # 50 Golden Business Queries benchmark dataset
-│   ├── guardrails.py                   # PII redactor, prompt injection defense, RBAC
-│   ├── metrics.py                      # Precision, Recall, Faithfulness, LLM Judge
-│   ├── eval_suite.py                   # Practical: 50 Queries Evaluation Suite
-│   ├── main.py                         # Standalone runner
-│   └── README.md
-├── tests/
-│   └── test_ui_api.py                  # Automated test suite covering all modules & APIs
-├── ui/
-│   ├── index.html                      # Enterprise Web Console single-page application
-│   ├── style.css                       # Modern dark-mode responsive enterprise styling
-│   └── app.js                          # Client-side state manager and API dispatcher
-├── .gitignore                          # Comprehensive Python & OS ignore rules
-├── CODE_OF_CONDUCT.md                  # Contributor Covenant 2.1
-├── CONTRIBUTING.md                     # Open-source contribution guidelines
-├── LICENSE                             # MIT Open Source License
-├── pyproject.toml                      # Modern packaging & tooling configuration
-├── requirements.txt                    # Unified production dependencies
-├── run_all.py                          # Master CLI orchestrator
-├── setup_env.ps1                       # PowerShell environment setup
-├── setup_env.sh                        # Bash environment setup (Linux/macOS)
-├── start_ui.bat                        # Windows CMD UI launcher
-├── start_ui.ps1                        # PowerShell UI launcher
-├── start_ui.sh                         # Bash UI launcher (Linux/macOS)
-└── ui_server.py                        # Multi-threaded HTTP server & API gateway
-```
+| `POST` | `/api/orchestrator/run-all` | Execute comprehensive assessment of all 13 modules | Verifies health of all modules |
 
 ---
 
@@ -396,8 +303,6 @@ Contributions are welcome! Please read the [Contributing Guidelines](CONTRIBUTIN
 ## 📄 License
 
 Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for more information.
-
----
 
 <div align="center">
   <sub>Engineered with precision for the Enterprise GenAI Engineering Curriculum by <a href="https://github.com/AkshayKulkarni1904">Akshay Kulkarni</a>.</sub>

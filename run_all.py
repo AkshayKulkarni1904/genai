@@ -1,4 +1,4 @@
-# Master Orchestrator: GenAI Practical Modules (7 - 13)
+# Master Orchestrator: GenAI Practical Modules (1 - 13)
 import sys
 import subprocess
 from pathlib import Path
@@ -10,6 +10,12 @@ console = Console()
 BASE = Path(__file__).parent.resolve()
 
 MODULES = [
+    ("module_01_foundations", "Module 1: Foundations of GenAI & LLMs", "LLM Parameter Engine, Sampling, Token Economics & Latency"),
+    ("module_02_prompt_engineering", "Module 2: Prompt Engineering", "Few-Shot Classification, Contract Extraction, CoT Summaries & Rules"),
+    ("module_03_llm_apis", "Module 3: Using LLM APIs in Programming", "Resilient Client, Failover Fallbacks, Tool Calling & Streaming"),
+    ("module_04_direct_api_vs_langchain", "Module 4: Direct APIs vs LangChain", "Side-by-Side Document Q&A Benchmark & Trade-off Matrix"),
+    ("module_05_embeddings_and_vector_search", "Module 5: Embeddings & Vector Search", "Chunking Strategies, Multi-Metric Vector Search & Hybrid RRF"),
+    ("module_06_rag_foundations", "Module 6: Retrieval-Augmented Generation", "Conversational RAG, Query Rewriting, Multi-Tenant RBAC & Citations"),
     ("module_07_advanced_rag", "Module 7: Advanced RAG Patterns", "Support-Resolution Assistant with Multi-Source Retrieval"),
     ("module_08_knowledge_graph", "Module 8: Knowledge Graph Fundamentals", "IT Support Graph Modeling & Cypher Traversal"),
     ("module_09_graph_rag", "Module 9: GraphRAG", "4-Step Incident Resolution GraphRAG Workflow"),
@@ -36,23 +42,23 @@ def main():
     python_exe = sys.executable
     console.print(Panel.fit(
         "[bold green]Enterprise GenAI Practical Engineering Repository[/bold green]\n"
-        "[dim]Modules 7 - 13 End-to-End Test & Orchestration Suite[/dim]\n"
+        "[dim]Complete Curriculum Modules 1 - 13 End-to-End Orchestration Suite[/dim]\n"
         f"[dim]Python Environment: {python_exe}[/dim]"
     ))
 
-    table = Table(title="GenAI Practical Modules Portfolio", show_lines=True)
+    table = Table(title="GenAI Practical Modules Portfolio (Modules 1 - 13)", show_lines=True)
     table.add_column("No.", style="bold cyan", width=4)
-    table.add_column("Module Name", style="bold white", width=38)
+    table.add_column("Module Name", style="bold white", width=42)
     table.add_column("Core Practical Project", style="yellow")
     
     for idx, (dir_name, title, practical) in enumerate(MODULES, 1):
         table.add_row(str(idx), title, practical)
-    table.add_row("8", "[bold magenta]Interactive Enterprise Web Console[/bold magenta]", "Launch Modern Web UI for all 7 modules (http://127.0.0.1:8000)")
+    table.add_row("14", "[bold magenta]Interactive Enterprise Web Console[/bold magenta]", "Launch Modern Web UI for all 13 modules (http://127.0.0.1:8000)")
     console.print(table)
 
     if len(sys.argv) > 1:
         choice = sys.argv[1]
-        if choice == "8" or choice.lower() == "ui":
+        if choice == "14" or choice.lower() == "ui":
             console.print("\n[bold magenta]Launching Enterprise Web Console...[/bold magenta]")
             ui_server_path = BASE / "ui_server.py"
             subprocess.run([python_exe, str(ui_server_path)])
@@ -66,14 +72,14 @@ def main():
         except ValueError:
             pass
 
-    console.print("\n[bold yellow]Running All Modules Sequentially...[/bold yellow]\n")
+    console.print("\n[bold yellow]Running All 13 Modules Sequentially...[/bold yellow]\n")
     results = {}
     for dir_name, title, practical in MODULES:
         success = run_single_module(dir_name, title, practical, python_exe)
         results[title] = success
 
     console.print(f"\n{'='*75}")
-    console.print("[bold green]ALL MODULES EXECUTION SUMMARY[/bold green]")
+    console.print("[bold green]ALL MODULES (1 - 13) EXECUTION SUMMARY[/bold green]")
     console.print(f"{'='*75}")
     
     summary_table = Table(show_header=True)
@@ -89,7 +95,7 @@ def main():
         
     console.print(summary_table)
     if all_ok:
-        console.print("\n[bold green]✔ All 7 Modules Executed and Verified Successfully![/bold green]")
+        console.print("\n[bold green]✔ All 13 Modules Executed and Verified Successfully![/bold green]")
     else:
         console.print("\n[bold red]✘ Some modules encountered issues.[/bold red]")
 
